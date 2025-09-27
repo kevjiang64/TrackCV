@@ -40,6 +40,7 @@ const upload = () => {
     }
 
     setStatusText("Converting your resume into image...");
+
     const imageFile = await convertPdfToImage(file);
 
     if (!imageFile.file) {
@@ -93,6 +94,8 @@ const upload = () => {
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
     setStatusText("Analysis complete. Redirecting...");
+
+    navigate(`/resume/${uuid}`);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
