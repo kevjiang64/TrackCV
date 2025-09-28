@@ -57,7 +57,7 @@ const Resume = () => {
   }, [id]);
 
   return (
-    <main className="!pt-0">
+    <main className="!pt-0 px-3">
       <nav className="resume-nav">
         <Link to={"/"} className="back-button">
           <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5"></img>
@@ -84,13 +84,13 @@ const Resume = () => {
         <section className="feedback-section">
           <h2 className="text-4xl text-black font-bold">Resume Review</h2>
           {feedback ? (
-            <div className="flex flex-cols gap-8 animate-in fade-in duration-1000">
-              {/* <Summary feedback={feedback} />
+            <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
+              <Summary feedback={feedback} />
               <Ats
                 score={feedback.ATS.score || 0}
                 suggestions={feedback.ATS.tips || 0}
               ></Ats>
-              <Details feedback={feedback}></Details> */}
+              <Details feedback={feedback}></Details>
             </div>
           ) : (
             <img className="w-full" src="/images/resume-scan-2.gif" />
